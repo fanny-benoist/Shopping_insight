@@ -39,10 +39,19 @@
         </div>
         <div class="right-panel">
             <div id="stats"></div>
-            <div id="hits" data-insights-object-id="{{hit.objectID}}"
-              data-insights-position="{{hit.__position}}"
-              data-insights-query-id="{{hit.__queryID}}"></div>
+            <div id="hits"></div>
         </div>
+        <script>
+          window.dataLayer = window.dataLayer || []
+          window.dataLayer.push({
+          algoliaIndexName: 'shopping'})
+
+          window.dataLayer = window.dataLayer || []
+          window.dataLayer.push({
+            algoliaUserToken: '<my-user-token>' // uniquely identifies the current visitor
+            })
+        </script>
+
     </main>
     <footer>
         <div id="hits-per-page"></div>

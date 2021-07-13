@@ -15,6 +15,9 @@ const search = instantsearch({
 });
 
 search.addWidgets([
+    instantsearch.widgets.configure({
+      clickAnalytics: true,
+    }),
     instantsearch.widgets.searchBox({
       container: '#searchbox',
     }),
@@ -61,19 +64,25 @@ search.addWidgets([
     }
     }),
     instantsearch.widgets.hits({
-        container: '#hits',
-        templates: {
-          item: `
-            <div class="hit">
-              <img src="{{image_link}}" align="center"  alt="{{name}}" />
-              <div class="hit-name">
-                {{#helpers.highlight}}{ "attribute": "name" }{{/helpers.highlight}}
-              </div>
-              <div class="hit-price">\${{price}}</div>
+      container: '#hits',
+      templates: {
+        item: (hit) => `
+          <div data-insights-object-id="${hit.objectID}"
+          data-insights-position="${hit.__position}"
+          data-insights-query-id="${hit.__queryID}">
+            <img src="${hit.image_link}" align="left" alt="${hit.name}" />
+            <div class="hit-name">
+              ${hit.name}
             </div>
-          `,
-        },
-      }),
+            <div class="hit-price">${hit.price}$</div>
+            <div>
+             <button>
+               Add to cart
+             </button>
+            </div>
+          </div> `,
+      },
+    }),
     instantsearch.widgets.hitsPerPage({
       container: '#hits-per-page',
       items: [
