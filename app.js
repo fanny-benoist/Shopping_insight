@@ -71,15 +71,10 @@ search.addWidgets([
           <div data-insights-object-id="${hit.objectID}"
           data-insights-position="${hit.__position}"
           data-insights-query-id="${hit.__queryID}">
-            <img src="${hit.image_link}" align="left" alt="${hit.name}" />
-            <div class="hit-name">
-              ${hit.name}
-            </div>
+            <img src="${hit.image_link}" align="left" alt="${hit.name}"/>
+            <div class="hit-name">${hit.name}</div>
             <div class="hit-price">${hit.price}$</div>
-            <div>
-            <button id="button">
-               Add to cart
-            </button>
+            <button id="button">Add to cart</button>
           </div>
         </div> `,
       },
