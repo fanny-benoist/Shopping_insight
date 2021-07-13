@@ -67,7 +67,8 @@ search.addWidgets([
       container: '#hits',
       templates: {
         item: (hit) => `
-          <div id="single-hit" data-insights-object-id="${hit.objectID}"
+        <div id="single-hit">
+          <div data-insights-object-id="${hit.objectID}"
           data-insights-position="${hit.__position}"
           data-insights-query-id="${hit.__queryID}">
             <img src="${hit.image_link}" align="left" alt="${hit.name}" />
@@ -76,11 +77,11 @@ search.addWidgets([
             </div>
             <div class="hit-price">${hit.price}$</div>
             <div>
-             <button id="button">
+            <button id="button">
                Add to cart
-             </button>
-            </div>
-          </div> `,
+            </button>
+          </div>
+        </div> `,
       },
     }),
     instantsearch.widgets.hitsPerPage({
