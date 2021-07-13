@@ -75,8 +75,8 @@ search.addWidgets([
               ${hit.name}
             </div>
             <div class="hit-price">${hit.price}$</div>
-            <div id="button">
-             <button>
+            <div>
+             <button id="button">
                Add to cart
              </button>
             </div>
