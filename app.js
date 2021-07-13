@@ -67,7 +67,7 @@ search.addWidgets([
       container: '#hits',
       templates: {
         item: (hit) => `
-          <div data-insights-object-id="${hit.objectID}"
+          <div class="single-hit" data-insights-object-id="${hit.objectID}"
           data-insights-position="${hit.__position}"
           data-insights-query-id="${hit.__queryID}">
             <img src="${hit.image_link}" align="left" alt="${hit.name}" />
